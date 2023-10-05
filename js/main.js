@@ -1,19 +1,10 @@
 /*
     Cristian Camacho
-    
+
     Para el Proyecto Final elegi:
     Calcular la nota final de alumnos ingresados:
-
 */
 alert("Vamos a calcular la nota final de los Alumnos y la nota promedio del curso: (Pulse Enter para continuar)");
-
-//Para los obj
-const profesor ={}
-//profesor.nombre = prompt("Ingrese su Nombre Profesor: ");
-//profesor.apellido = prompt("Ingrese su Apellido: ");
-//profesor.edad = prompt("Ingrese su edad: ");
-profesor.cant_alumnos = parseInt(prompt("Ingrese la CANTIDAD de Alumnos del Curso:")); //Variable para saber la cantidad de alumnos
-
 
 /*Para el DOM y los Eventos*/
 const boton_valor = document.getElementById("boton_valor");
@@ -32,12 +23,13 @@ function mostrar_inputs(){
     console.log("el valor del imput edad es: " + edad_profesor[0].value);
     */
     
+    //Para los Datos del Profesor
     mostrar_texto[0].innerText = "El Nombre del Profesor es: " + nombre_profesor[0].value;
     mostrar_texto[0].innerText = "El Apellido del Profesor es: " + apellido_profesor[0].value;
     mostrar_texto[0].innerText = "La Edad del Profesor es: " + edad_profesor[0].value;
-
+    
     mostrar_texto[0].innerHTML = `
-        <p>El Nombre del Profesor es: ${nombre_profesor[0].value}</p>
+    <p>El Nombre del Profesor es: ${nombre_profesor[0].value}</p>
         <p>El Apellido del Profesor es: ${apellido_profesor[0].value}</p>
         <p>La edad del Profesor es: ${edad_profesor[0].value}</p>
         <p>Alumnos Aprobados: ${alumnos_aprobados}; Alumnos Desaprobados: ${alumnos_desaprobados}</p>
@@ -51,12 +43,20 @@ function mostrar_inputs(){
     const nombre_profesor_storage = localStorage.getItem("nombre profesor");
     const apellido_profesor_storage = localStorage.getItem("nombre profesor");
     const edad_profesor_storage = localStorage.getItem("nombre profesor");
-
+    
     localStorage.setItem("profesor", profesor);
     const en_json = JSON.stringify(profesor);
     console.log(en_json);
 
 }
+
+//Para los obj
+const profesor ={}
+//profesor.nombre = prompt("Ingrese su Nombre Profesor: ");
+//profesor.apellido = prompt("Ingrese su Apellido: ");
+//profesor.edad = prompt("Ingrese su edad: ");
+
+profesor.cant_alumnos = parseInt(prompt("Ingrese la CANTIDAD de Alumnos del Curso:")); //Variable para saber la cantidad de alumnos
 
 
 //Variables
@@ -65,7 +65,6 @@ let nota = 0, cant_notas = 0, suma_nota = 0, cant_nota_aprobado = 0, cant_nota_d
 let promedio = 0, promedio_total = 0, promedio_suma = 0;
 let i = 0, y = 0, j = 0; //Para recorrer el bucle
 let array_alumnos_promedio = []; //Array para guardar el promedio de los alumnos
-
 
 //Funcion para el reinicio
 function reset(){
