@@ -4,7 +4,32 @@
     Para el Proyecto Final elegi:
     Calcular la nota final de alumnos ingresados:
 */
-alert("Vamos a calcular la nota final de los Alumnos y la nota promedio del curso: (Pulse Enter para continuar)");
+
+
+
+/* Swal.fire({
+    title: 'Bienvenido!',
+    text: 'Vamos a calcular la nota final de los Alumnos y la nota promedio del curso: (Pulse Enter para continuar)',
+    confirmButtonText: 'Continuar',
+}); */
+
+
+(async () => { //Esto es una funcion autoinvocada, lo que tenga adentro de las llaves se ejecutara de forma automatiza
+    //Para utilizar await necesito utilizar async
+    const {value: valor} = await Swal.fire({ //Se ejecuta la alerta obteniendo un valor
+        input: 'text', 
+        inputPlaceholder: 'dasdasdad'
+    });
+    if (valor) {
+        Swal.fire(valor)
+    }
+    console.log("el vcalor de valor es: " + valor);
+    
+}) ();
+
+
+
+
 
 /*Para el DOM y los Eventos*/
 const boton_valor = document.getElementById("boton_valor");
@@ -16,7 +41,7 @@ const apellido_profesor = document.getElementsByClassName("apellido_profesor");
 const edad_profesor = document.getElementsByClassName("edad_profesor");
     
 function mostrar_inputs(){
-
+    
     /* Para ver los Valores por consola
     console.log("el valor del imput nombre es: " + nombre_profesor[0].value);
     console.log("el valor del imput profesor es: " + apellido_profesor[0].value);
@@ -56,7 +81,7 @@ const profesor ={}
 //profesor.apellido = prompt("Ingrese su Apellido: ");
 //profesor.edad = prompt("Ingrese su edad: ");
 
-profesor.cant_alumnos = parseInt(prompt("Ingrese la CANTIDAD de Alumnos del Curso:")); //Variable para saber la cantidad de alumnos
+//profesor.cant_alumnos = parseInt(prompt("Ingrese la CANTIDAD de Alumnos del Curso:")); //Variable para saber la cantidad de alumnos
 
 
 //Variables
@@ -79,7 +104,7 @@ for(i=0; i < profesor.cant_alumnos; i+=1){
 
     j += 1; //Para que el valor del primer elemeto del array sea 1
     console.log("Alumno " + j + ":");
-
+    
     cant_notas = prompt("Ingrese La CANTIDAD DE Notas que tuvo el Alumno " + j);
     console.log("El Alumno " + j + " tuvo " + cant_notas + " notas");
 
