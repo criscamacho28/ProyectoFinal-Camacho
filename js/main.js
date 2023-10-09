@@ -57,8 +57,6 @@ function calcular(){
 function mostrar_inputs_seguir(){ //Para ver el valor de los inputs y calcular cuando se da click en el boton Calcular
     const notas = document.getElementsByClassName("notas"); //Leo el boton Calcular de las Notas Ingresadas
     for(let c = 0; c <= cantidad_notas[0].value; c += 1){
-        console.log("los valores de los inputs son:" + Number(notas[c].value));
-        
         if(Number(notas[c].value) >= 6){ //si la nota es mayor a 6
             cant_nota_aprobado += 1;
         }else{
@@ -86,6 +84,19 @@ function mostrar_inputs(){
         <p>Pagina realizada por ${yo.nombre}</p>
     `;
 
+    if(promedio >= 6){
+        Swal.fire({
+            icon: 'success',
+            title: 'El Alumno Aprobo',
+        })
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'El Alumno Desaprobo',
+        }) 
+    }
+    
+
     //Para Storage
     localStorage.setItem("nombre profesor", nombre_profesor[0].value);
     localStorage.setItem("apellido profesor", apellido_profesor[0].value);
@@ -96,7 +107,6 @@ function mostrar_inputs(){
 
     localStorage.setItem("profesor", profesor);
     const en_json = JSON.stringify(profesor);
-    console.log(en_json);
 
 }
 
