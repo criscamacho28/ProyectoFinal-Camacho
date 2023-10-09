@@ -37,7 +37,6 @@ fetch(url)
   .then(response => response.json())
   .then(data => {
     const temperatura = data.main.temp;
-    console.log(`La temperatura actual en ${ciudad} es de ${temperatura.toFixed(0)}°C`);
     temp.innerHTML= `
         <p id="temp">Clima de Buenos Aires: ${temperatura.toFixed(0)} °C</p>
     `
