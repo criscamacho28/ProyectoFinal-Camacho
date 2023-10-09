@@ -7,11 +7,16 @@
     Esto es todo lo que aprendi profe, muchas gracias.
 */
 
+Swal.fire({
+    title: 'Bienvenido',
+    text: 'Vamos a calcular las notas de un Alumno (Siga los Pasos y pulse Enter para continuar)',
+    confirmButtonText: 'Continuar',
+})
+
 //Variables
 let nota = 0, cant_notas = 0, suma_nota = 0, cant_nota_aprobado = 0, cant_nota_desaprobado = 0;
 let promedio = 0;
 let i = 0, y = 0, j = 0; //Para recorrer el bucle
-let array_alumnos_promedio = []; //Array para guardar el promedio de los alumnos
 
 /*Para el DOM y los Eventos*/
 const boton_valor = document.getElementById("boton_valor");
@@ -23,7 +28,9 @@ const apellido_profesor = document.getElementsByClassName("apellido_profesor");
 const edad_profesor = document.getElementsByClassName("edad_profesor");
 
 //Para los obj
-const profesor ={}
+const yo ={
+    nombre: "Cristian Camacho"
+}
 
 boton_valor.onclick = mostrar_inputs;  //Cuando doy Click al boton y ejecutar una funcion
 boton_calcular.onclick = calcular; //Cuando clickeo el boton calcular
@@ -76,6 +83,7 @@ function mostrar_inputs(){
         <p>La edad del Profesor es: ${edad_profesor[0].value}</p>
         <p>Notas Aprobadas del Alumno: ${cant_nota_aprobado}; Notas Desaprobados: ${cant_nota_desaprobado}</p>
         <p>El Promedio del Alumno es ${promedio} del Profesor ${nombre_profesor[0].value} ${apellido_profesor[0].value}</p>
+        <p>Pagina realizada por ${yo.nombre}</p>
     `;
 
     //Para Storage
