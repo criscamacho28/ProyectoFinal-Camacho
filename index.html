@@ -18,20 +18,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Calcular las notas de los Alumnos:</h1>
+    <h1>Calcular las notas de Alumno:</h1>
 
-    <!--Para el Profesor-->
     <label for="nombre_profesor">Nombre del Profesor:</label>
     <input type="text" placeholder="Ingrese su Nombre:" class="nombre_profesor">
     <label for="apellido_profesor">Apellido del Profesor:</label>
     <input type="text" placeholder="Ingrese su Apellido:" class="apellido_profesor">
     <label for="edad_profesor">Edad del Profesor:</label>
     <input type="number" placeholder="Ingrese su Edad:" class="edad_profesor">
-
-    <button id="boton_valor">Ver</button>
-
+    <br>
+    <label for="cantidad_notas">Ingrese la Cantidad de Notas del Alumno</label>
+    <input type="number" placeholder="Ingrese aqui..." class="cantidad_notas" max="10">
+    <button id="boton_calcular">Calcular</button>
+    
     <p>Resultados:</p>
-    <p class="mostrar_texto">Se mostraran los Resultados Obtenidos despues de completar el formulario y dar click a "Ver"</p>
-
+    <p class="mostrar_texto">
+        Se mostraran los Resultados siguiendo estos pasos: 
+        1° Completar Nombre, Apellido y Edad del Profesor <br>
+        2° Ingresar la Cantidad de Notas del Alumno y dar Click en Calcular<br>
+        3° Completar las Notas del Alumno y dar click a Calcular abajo de las notas<br>
+        4° Click en Ver Resultados
+    </p>
+    <button id="boton_valor">Ver Resultados</button>Click en Ver Resultados
+    </p>
+    
 </body>
 </html>
