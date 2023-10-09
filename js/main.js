@@ -27,6 +27,26 @@ const nombre_profesor = document.getElementsByClassName("nombre_profesor");
 const apellido_profesor = document.getElementsByClassName("apellido_profesor");
 const edad_profesor = document.getElementsByClassName("edad_profesor");
 
+
+//Para la API de clima de Buenos Aires, key ada8097a2998b7b173de42b85c690bed
+const apiKey = 'ada8097a2998b7b173de42b85c690bed';
+const ciudad = 'Buenos Aires';
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`;
+const temp = document.getElementById("temp");
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    const temperatura = data.main.temp;
+    console.log(`La temperatura actual en ${ciudad} es de ${temperatura.toFixed(0)}°C`);
+    temp.innerHTML= `
+        <p id="temp">Clima de Buenos Aires: ${temperatura.toFixed(0)} °C</p>
+    `
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
 //Para los obj
 const yo ={
     nombre: "Cristian Camacho"
